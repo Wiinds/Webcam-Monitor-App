@@ -9,6 +9,9 @@ st.title("Motion Capture")
 
 start = st.button("Start Camera", key="start")
 
+end_video = st.button("End Video", key="end")
+
+video = cv2.VideoCapture(0)
 
 camera_active = False
 
@@ -16,7 +19,6 @@ camera_active = False
 if start:
     time.sleep(1)
     camera_active = True
-    video = cv2.VideoCapture(0)
     streamlit_image = st.image([])
             
     while camera_active:
@@ -75,12 +77,11 @@ if start:
 
         #video.release()
 
-end_video = st.button("End Video", key="end")
 
 if end_video: 
     camera_active = False
     video.release()
-    st.info(" Video has Ended")
+    st.info("Video has Ended")
 
 
 #first_frame = None
