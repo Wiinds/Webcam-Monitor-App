@@ -1,6 +1,16 @@
 import cv2
 import time
 from emailing import send_email
+import streamlit as st
+
+
+title = st.title("Motion Detector")
+
+camera_button = st.button("Start Camera")
+
+#if camera_button:
+    #streamlit_image = st.image([])
+    
 
 
 video = cv2.VideoCapture(0)
@@ -39,7 +49,6 @@ while True:
     if status_list[0] == 1 and status_list[1] == 0:
         
         send_email()
-        
         
     cv2.imshow("Video", frame)
     
