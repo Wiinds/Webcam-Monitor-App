@@ -4,6 +4,16 @@ import glob
 import os
 from threading import Thread
 from emailing import send_email
+import streamlit as st
+
+
+title = st.title("Motion Detector")
+
+camera_button = st.button("Start Camera")
+
+#if camera_button:
+    #streamlit_image = st.image([])
+    
 
 
 video = cv2.VideoCapture(0)
